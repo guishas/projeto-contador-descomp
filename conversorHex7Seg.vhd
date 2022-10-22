@@ -44,7 +44,7 @@ begin
                             "0000000" when dadoHex="1000" else ---8
                             "0010000" when dadoHex="1001" else ---9
                             "0001000" when dadoHex="1010" else ---A
-                            "0000011" when dadoHex="1011" else ---B
+                            "1111111" when dadoHex="1011" else ---B
                             "0101111" when dadoHex="1100" else ---C
                             "0100011" when dadoHex="1101" else ---D
                             "0000110" when dadoHex="1110" else ---E
