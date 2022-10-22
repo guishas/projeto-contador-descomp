@@ -1,0 +1,778 @@
+Analysis & Synthesis report for Contador
+Fri Oct 21 17:57:46 2022
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |Contador
+ 11. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico2x1:MUX_ULA
+ 12. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico4x1:MUX_PC
+ 13. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REGA
+ 14. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REG_RET
+ 15. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:PC
+ 16. Parameter Settings for User Entity Instance: CPU:CPU|somaConstante:INCREMENTA_PC
+ 17. Parameter Settings for User Entity Instance: CPU:CPU|ULASomaSub:ULA
+ 18. Parameter Settings for User Entity Instance: memoriaRAM:RAM
+ 19. Parameter Settings for User Entity Instance: memoria:ROM
+ 20. Parameter Settings for User Entity Instance: registradorGenerico:REG_LED
+ 21. Parameter Settings for User Entity Instance: HexReg:HEXREG0|registradorGenerico:REG
+ 22. Parameter Settings for User Entity Instance: HexReg:HEXREG1|registradorGenerico:REG
+ 23. Parameter Settings for User Entity Instance: HexReg:HEXREG2|registradorGenerico:REG
+ 24. Parameter Settings for User Entity Instance: HexReg:HEXREG3|registradorGenerico:REG
+ 25. Parameter Settings for User Entity Instance: HexReg:HEXREG4|registradorGenerico:REG
+ 26. Parameter Settings for User Entity Instance: HexReg:HEXREG5|registradorGenerico:REG
+ 27. Port Connectivity Checks: "flipFlop:FLIPFLOP_KEY2"
+ 28. Port Connectivity Checks: "flipFlop:FLIPFLOP_KEY1"
+ 29. Port Connectivity Checks: "flipFlop:FLIPFLOP_KEY0"
+ 30. Port Connectivity Checks: "HexReg:HEXREG0|conversorHex7Seg:HEX_SEG"
+ 31. Port Connectivity Checks: "HexReg:HEXREG0|registradorGenerico:REG"
+ 32. Port Connectivity Checks: "flipFlop:FF_LED9"
+ 33. Port Connectivity Checks: "flipFlop:FF_LED8"
+ 34. Port Connectivity Checks: "registradorGenerico:REG_LED"
+ 35. Port Connectivity Checks: "decoder3x8:DECODER_LED"
+ 36. Port Connectivity Checks: "decoder3x8:DECODER_BLOCO"
+ 37. Port Connectivity Checks: "CPU:CPU|registradorGenerico:PC"
+ 38. Port Connectivity Checks: "CPU:CPU|muxGenerico4x1:MUX_PC"
+ 39. Port Connectivity Checks: "CPU:CPU"
+ 40. Post-Synthesis Netlist Statistics for Top Partition
+ 41. Elapsed Time Per Partition
+ 42. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri Oct 21 17:57:46 2022       ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                   ; Contador                                    ;
+; Top-level Entity Name           ; Contador                                    ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 580                                         ;
+; Total pins                      ; 77                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CEBA4F23C7        ;                    ;
+; Top-level entity name                                                           ; Contador           ; Contador           ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; VHDL Show LMF Mapping Messages                                                  ; Off                ;                    ;
+; VHDL Version                                                                    ; VHDL_2008          ; VHDL_1993          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                       ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
+; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; C:/intelFPGA_lite/20.1/projetos/entrega-contador/ULASomaSub.vhd             ;         ;
+; somaConstante.vhd                ; yes             ; User VHDL File  ; C:/intelFPGA_lite/20.1/projetos/entrega-contador/somaConstante.vhd          ;         ;
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; C:/intelFPGA_lite/20.1/projetos/entrega-contador/registradorGenerico.vhd    ;         ;
+; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; C:/intelFPGA_lite/20.1/projetos/entrega-contador/muxGenerico4x1.vhd         ;         ;
+; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; C:/intelFPGA_lite/20.1/projetos/entrega-contador/muxGenerico2x1.vhd         ;         ;
+; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; C:/intelFPGA_lite/20.1/projetos/entrega-contador/memoriaRAM.vhd             ;         ;
+; memoria.vhd                      ; yes             ; User VHDL File  ; C:/intelFPGA_lite/20.1/projetos/entrega-contador/memoria.vhd                ;         ;
+; jumpLogic.vhd                    ; yes             ; User VHDL File  ; C:/intelFPGA_lite/20.1/projetos/entrega-contador/jumpLogic.vhd              ;         ;
+; hexReg.vhd                       ; yes             ; User VHDL File  ; C:/intelFPGA_lite/20.1/projetos/entrega-contador/hexReg.vhd                 ;         ;
+; flipFlop.vhd                     ; yes             ; User VHDL File  ; C:/intelFPGA_lite/20.1/projetos/entrega-contador/flipFlop.vhd               ;         ;
+; edgeDetector.vhd                 ; yes             ; User VHDL File  ; C:/intelFPGA_lite/20.1/projetos/entrega-contador/edgeDetector.vhd           ;         ;
+; decoderInstru.vhd                ; yes             ; User VHDL File  ; C:/intelFPGA_lite/20.1/projetos/entrega-contador/decoderInstru.vhd          ;         ;
+; decoder3x8.vhd                   ; yes             ; User VHDL File  ; C:/intelFPGA_lite/20.1/projetos/entrega-contador/decoder3x8.vhd             ;         ;
+; CPU.vhd                          ; yes             ; User VHDL File  ; C:/intelFPGA_lite/20.1/projetos/entrega-contador/CPU.vhd                    ;         ;
+; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; C:/intelFPGA_lite/20.1/projetos/entrega-contador/conversorHex7Seg.vhd       ;         ;
+; buffer_3_state_8portas.vhd       ; yes             ; User VHDL File  ; C:/intelFPGA_lite/20.1/projetos/entrega-contador/buffer_3_state_8portas.vhd ;         ;
+; buffer_3_state.vhd               ; yes             ; User VHDL File  ; C:/intelFPGA_lite/20.1/projetos/entrega-contador/buffer_3_state.vhd         ;         ;
+; Contador.vhd                     ; yes             ; User VHDL File  ; C:/intelFPGA_lite/20.1/projetos/entrega-contador/Contador.vhd               ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 541            ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 607            ;
+;     -- 7 input functions                    ; 24             ;
+;     -- 6 input functions                    ; 373            ;
+;     -- 5 input functions                    ; 37             ;
+;     -- 4 input functions                    ; 70             ;
+;     -- <=3 input functions                  ; 103            ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 580            ;
+;                                             ;                ;
+; I/O pins                                    ; 77             ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 577            ;
+; Total fan-out                               ; 4952           ;
+; Average fan-out                             ; 3.69           ;
++---------------------------------------------+----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                   ;
++-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                               ; Entity Name         ; Library Name ;
++-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------+---------------------+--------------+
+; |Contador                           ; 607 (45)            ; 580 (0)                   ; 0                 ; 0          ; 77   ; 0            ; |Contador                                         ; Contador            ; work         ;
+;    |CPU:CPU|                        ; 84 (0)              ; 28 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Contador|CPU:CPU                                 ; CPU                 ; work         ;
+;       |ULASomaSub:ULA|              ; 39 (39)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|CPU:CPU|ULASomaSub:ULA                  ; ULASomaSub          ; work         ;
+;       |decoderInstru:DECODER|       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|CPU:CPU|decoderInstru:DECODER           ; decoderInstru       ; work         ;
+;       |flipFlop:FLAG_EQ|            ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|CPU:CPU|flipFlop:FLAG_EQ                ; flipFlop            ; work         ;
+;       |flipFlop:FLAG_GT|            ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|CPU:CPU|flipFlop:FLAG_GT                ; flipFlop            ; work         ;
+;       |jumpLogic:JMP_LOGIC|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|CPU:CPU|jumpLogic:JMP_LOGIC             ; jumpLogic           ; work         ;
+;       |muxGenerico2x1:MUX_ULA|      ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|CPU:CPU|muxGenerico2x1:MUX_ULA          ; muxGenerico2x1      ; work         ;
+;       |muxGenerico4x1:MUX_PC|       ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|CPU:CPU|muxGenerico4x1:MUX_PC           ; muxGenerico4x1      ; work         ;
+;       |registradorGenerico:PC|      ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|CPU:CPU|registradorGenerico:PC          ; registradorGenerico ; work         ;
+;       |registradorGenerico:REGA|    ; 6 (6)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|CPU:CPU|registradorGenerico:REGA        ; registradorGenerico ; work         ;
+;       |registradorGenerico:REG_RET| ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|CPU:CPU|registradorGenerico:REG_RET     ; registradorGenerico ; work         ;
+;       |somaConstante:INCREMENTA_PC| ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|CPU:CPU|somaConstante:INCREMENTA_PC     ; somaConstante       ; work         ;
+;    |HexReg:HEXREG0|                 ; 7 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|HexReg:HEXREG0                          ; HexReg              ; work         ;
+;       |conversorHex7Seg:HEX_SEG|    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|HexReg:HEXREG0|conversorHex7Seg:HEX_SEG ; conversorHex7Seg    ; work         ;
+;       |registradorGenerico:REG|     ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|HexReg:HEXREG0|registradorGenerico:REG  ; registradorGenerico ; work         ;
+;    |HexReg:HEXREG1|                 ; 7 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|HexReg:HEXREG1                          ; HexReg              ; work         ;
+;       |conversorHex7Seg:HEX_SEG|    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|HexReg:HEXREG1|conversorHex7Seg:HEX_SEG ; conversorHex7Seg    ; work         ;
+;       |registradorGenerico:REG|     ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|HexReg:HEXREG1|registradorGenerico:REG  ; registradorGenerico ; work         ;
+;    |HexReg:HEXREG2|                 ; 7 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|HexReg:HEXREG2                          ; HexReg              ; work         ;
+;       |conversorHex7Seg:HEX_SEG|    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|HexReg:HEXREG2|conversorHex7Seg:HEX_SEG ; conversorHex7Seg    ; work         ;
+;       |registradorGenerico:REG|     ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|HexReg:HEXREG2|registradorGenerico:REG  ; registradorGenerico ; work         ;
+;    |HexReg:HEXREG3|                 ; 7 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|HexReg:HEXREG3                          ; HexReg              ; work         ;
+;       |conversorHex7Seg:HEX_SEG|    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|HexReg:HEXREG3|conversorHex7Seg:HEX_SEG ; conversorHex7Seg    ; work         ;
+;       |registradorGenerico:REG|     ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|HexReg:HEXREG3|registradorGenerico:REG  ; registradorGenerico ; work         ;
+;    |HexReg:HEXREG4|                 ; 7 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|HexReg:HEXREG4                          ; HexReg              ; work         ;
+;       |conversorHex7Seg:HEX_SEG|    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|HexReg:HEXREG4|conversorHex7Seg:HEX_SEG ; conversorHex7Seg    ; work         ;
+;       |registradorGenerico:REG|     ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|HexReg:HEXREG4|registradorGenerico:REG  ; registradorGenerico ; work         ;
+;    |HexReg:HEXREG5|                 ; 7 (0)               ; 4 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|HexReg:HEXREG5                          ; HexReg              ; work         ;
+;       |conversorHex7Seg:HEX_SEG|    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|HexReg:HEXREG5|conversorHex7Seg:HEX_SEG ; conversorHex7Seg    ; work         ;
+;       |registradorGenerico:REG|     ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|HexReg:HEXREG5|registradorGenerico:REG  ; registradorGenerico ; work         ;
+;    |edgeDetector:DETECTOR_KEY0|     ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|edgeDetector:DETECTOR_KEY0              ; edgeDetector        ; work         ;
+;    |edgeDetector:DETECTOR_KEY1|     ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|edgeDetector:DETECTOR_KEY1              ; edgeDetector        ; work         ;
+;    |edgeDetector:DETECTOR_KEY2|     ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|edgeDetector:DETECTOR_KEY2              ; edgeDetector        ; work         ;
+;    |flipFlop:FF_LED8|               ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|flipFlop:FF_LED8                        ; flipFlop            ; work         ;
+;    |flipFlop:FF_LED9|               ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|flipFlop:FF_LED9                        ; flipFlop            ; work         ;
+;    |flipFlop:FLIPFLOP_KEY0|         ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|flipFlop:FLIPFLOP_KEY0                  ; flipFlop            ; work         ;
+;    |flipFlop:FLIPFLOP_KEY1|         ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|flipFlop:FLIPFLOP_KEY1                  ; flipFlop            ; work         ;
+;    |flipFlop:FLIPFLOP_KEY2|         ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|flipFlop:FLIPFLOP_KEY2                  ; flipFlop            ; work         ;
+;    |memoria:ROM|                    ; 129 (129)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|memoria:ROM                             ; memoria             ; work         ;
+;    |memoriaRAM:RAM|                 ; 299 (299)           ; 512 (512)                 ; 0                 ; 0          ; 0    ; 0            ; |Contador|memoriaRAM:RAM                          ; memoriaRAM          ; work         ;
+;    |registradorGenerico:REG_LED|    ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Contador|registradorGenerico:REG_LED             ; registradorGenerico ; work         ;
++-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 580   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 3     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 560   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |Contador|CPU:CPU|registradorGenerico:PC|DOUT[2]   ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 21 LEs               ; 7 LEs                  ; Yes        ; |Contador|CPU:CPU|registradorGenerico:REGA|DOUT[2] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |Contador ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; simulacao      ; false ; Enumerated                                      ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico2x1:MUX_ULA ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico4x1:MUX_PC ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; larguradados   ; 9     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REGA ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REG_RET ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; larguradados   ; 9     ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:PC ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; larguradados   ; 9     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|somaConstante:INCREMENTA_PC ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; larguradados   ; 9     ; Signed Integer                                          ;
+; constante      ; 1     ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|ULASomaSub:ULA ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memoriaRAM:RAM ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; datawidth      ; 8     ; Signed Integer                     ;
+; addrwidth      ; 6     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memoria:ROM ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; datawidth      ; 13    ; Signed Integer                  ;
+; addrwidth      ; 9     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico:REG_LED ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: HexReg:HEXREG0|registradorGenerico:REG ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: HexReg:HEXREG1|registradorGenerico:REG ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: HexReg:HEXREG2|registradorGenerico:REG ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: HexReg:HEXREG3|registradorGenerico:REG ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: HexReg:HEXREG4|registradorGenerico:REG ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: HexReg:HEXREG5|registradorGenerico:REG ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FLIPFLOP_KEY2" ;
++--------+-------+----------+------------------------+
+; Port   ; Type  ; Severity ; Details                ;
++--------+-------+----------+------------------------+
+; din    ; Input ; Info     ; Stuck at VCC           ;
+; enable ; Input ; Info     ; Stuck at VCC           ;
++--------+-------+----------+------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FLIPFLOP_KEY1" ;
++--------+-------+----------+------------------------+
+; Port   ; Type  ; Severity ; Details                ;
++--------+-------+----------+------------------------+
+; din    ; Input ; Info     ; Stuck at VCC           ;
+; enable ; Input ; Info     ; Stuck at VCC           ;
++--------+-------+----------+------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FLIPFLOP_KEY0" ;
++--------+-------+----------+------------------------+
+; Port   ; Type  ; Severity ; Details                ;
++--------+-------+----------+------------------------+
+; din    ; Input ; Info     ; Stuck at VCC           ;
+; enable ; Input ; Info     ; Stuck at VCC           ;
++--------+-------+----------+------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "HexReg:HEXREG0|conversorHex7Seg:HEX_SEG" ;
++----------+-------+----------+---------------------------------------+
+; Port     ; Type  ; Severity ; Details                               ;
++----------+-------+----------+---------------------------------------+
+; apaga    ; Input ; Info     ; Stuck at GND                          ;
+; negativo ; Input ; Info     ; Stuck at GND                          ;
+; overflow ; Input ; Info     ; Stuck at GND                          ;
++----------+-------+----------+---------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "HexReg:HEXREG0|registradorGenerico:REG" ;
++------+-------+----------+------------------------------------------+
+; Port ; Type  ; Severity ; Details                                  ;
++------+-------+----------+------------------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                             ;
++------+-------+----------+------------------------------------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FF_LED9" ;
++------+-------+----------+--------------------+
+; Port ; Type  ; Severity ; Details            ;
++------+-------+----------+--------------------+
+; rst  ; Input ; Info     ; Stuck at GND       ;
++------+-------+----------+--------------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FF_LED8" ;
++------+-------+----------+--------------------+
+; Port ; Type  ; Severity ; Details            ;
++------+-------+----------+--------------------+
+; rst  ; Input ; Info     ; Stuck at GND       ;
++------+-------+----------+--------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico:REG_LED" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decoder3x8:DECODER_LED"                                                                    ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; saida[7..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decoder3x8:DECODER_BLOCO"                                                                  ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; saida[7..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; saida[3..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:CPU|registradorGenerico:PC" ;
++--------+-------+----------+--------------------------------+
+; Port   ; Type  ; Severity ; Details                        ;
++--------+-------+----------+--------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                   ;
++--------+-------+----------+--------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "CPU:CPU|muxGenerico4x1:MUX_PC" ;
++--------------+-------+----------+-------------------------+
+; Port         ; Type  ; Severity ; Details                 ;
++--------------+-------+----------+-------------------------+
+; entradad_mux ; Input ; Info     ; Stuck at GND            ;
++--------------+-------+----------+-------------------------+
+
+
++-----------------------------------------+
+; Port Connectivity Checks: "CPU:CPU"     ;
++-------+-------+----------+--------------+
+; Port  ; Type  ; Severity ; Details      ;
++-------+-------+----------+--------------+
+; reset ; Input ; Info     ; Stuck at GND ;
++-------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 580                         ;
+;     CLR               ; 3                           ;
+;     ENA               ; 560                         ;
+;     plain             ; 17                          ;
+; arriav_lcell_comb     ; 607                         ;
+;     arith             ; 26                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 9                           ;
+;         4 data inputs ; 8                           ;
+;         5 data inputs ; 8                           ;
+;     extend            ; 24                          ;
+;         7 data inputs ; 24                          ;
+;     normal            ; 557                         ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 82                          ;
+;         3 data inputs ; 8                           ;
+;         4 data inputs ; 62                          ;
+;         5 data inputs ; 29                          ;
+;         6 data inputs ; 373                         ;
+; boundary_port         ; 77                          ;
+;                       ;                             ;
+; Max LUT depth         ; 12.70                       ;
+; Average LUT depth     ; 8.80                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Fri Oct 21 17:57:33 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Contador -c Contador
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file ulasomasub.vhd
+    Info (12022): Found design unit 1: ULASomaSub-comportamento File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/ULASomaSub.vhd Line: 18
+    Info (12023): Found entity 1: ULASomaSub File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/ULASomaSub.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somaconstante.vhd
+    Info (12022): Found design unit 1: somaConstante-comportamento File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/somaConstante.vhd Line: 16
+    Info (12023): Found entity 1: somaConstante File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/somaConstante.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file registradorgenerico.vhd
+    Info (12022): Found design unit 1: registradorGenerico-comportamento File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/registradorGenerico.vhd Line: 15
+    Info (12023): Found entity 1: registradorGenerico File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/registradorGenerico.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico4x1.vhd
+    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/muxGenerico4x1.vhd Line: 16
+    Info (12023): Found entity 1: muxGenerico4x1 File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/muxGenerico4x1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico2x1.vhd
+    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/muxGenerico2x1.vhd Line: 16
+    Info (12023): Found entity 1: muxGenerico2x1 File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/muxGenerico2x1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file memoriaram.vhd
+    Info (12022): Found design unit 1: memoriaRAM-rtl File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/memoriaRAM.vhd Line: 21
+    Info (12023): Found entity 1: memoriaRAM File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/memoriaRAM.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file memoria.vhd
+    Info (12022): Found design unit 1: memoria-assincrona File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/memoria.vhd Line: 16
+    Info (12023): Found entity 1: memoria File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/memoria.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file jumplogic.vhd
+    Info (12022): Found design unit 1: jumpLogic-comportamento File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/jumpLogic.vhd Line: 17
+    Info (12023): Found entity 1: jumpLogic File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/jumpLogic.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file hexreg.vhd
+    Info (12022): Found design unit 1: HexReg-arquitetura File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/hexReg.vhd Line: 15
+    Info (12023): Found entity 1: HexReg File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/hexReg.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file flipflop.vhd
+    Info (12022): Found design unit 1: flipFlop-comportamento File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/flipFlop.vhd Line: 13
+    Info (12023): Found entity 1: flipFlop File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/flipFlop.vhd Line: 4
+Info (12021): Found 3 design units, including 1 entities, in source file edgedetector.vhd
+    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/edgeDetector.vhd Line: 12
+    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/edgeDetector.vhd Line: 25
+    Info (12023): Found entity 1: edgeDetector File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/edgeDetector.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decoderinstru.vhd
+    Info (12022): Found design unit 1: decoderInstru-comportamento File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/decoderInstru.vhd Line: 11
+    Info (12023): Found entity 1: decoderInstru File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/decoderInstru.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decoder3x8.vhd
+    Info (12022): Found design unit 1: decoder3x8-comportamento File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/decoder3x8.vhd Line: 13
+    Info (12023): Found entity 1: decoder3x8 File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/decoder3x8.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file cpu.vhd
+    Info (12022): Found design unit 1: CPU-arquitetura File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/CPU.vhd Line: 20
+    Info (12023): Found entity 1: CPU File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/CPU.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file conversorhex7seg.vhd
+    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/conversorHex7Seg.vhd Line: 16
+    Info (12023): Found entity 1: conversorHex7Seg File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/conversorHex7Seg.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state_8portas.vhd
+    Info (12022): Found design unit 1: buffer_3_state_8portas-comportamento File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/buffer_3_state_8portas.vhd Line: 12
+    Info (12023): Found entity 1: buffer_3_state_8portas File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/buffer_3_state_8portas.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state.vhd
+    Info (12022): Found design unit 1: buffer_3_state-comportamento File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/buffer_3_state.vhd Line: 12
+    Info (12023): Found entity 1: buffer_3_state File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/buffer_3_state.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file contador.vhd
+    Info (12022): Found design unit 1: Contador-arquitetura File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/Contador.vhd Line: 29
+    Info (12023): Found entity 1: Contador File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/Contador.vhd Line: 5
+Info (12127): Elaborating entity "Contador" for the top level hierarchy
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/Contador.vhd Line: 87
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:CPU|muxGenerico2x1:MUX_ULA" File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/CPU.vhd Line: 42
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "CPU:CPU|muxGenerico4x1:MUX_PC" File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/CPU.vhd Line: 50
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:REGA" File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/CPU.vhd Line: 62
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:REG_RET" File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/CPU.vhd Line: 65
+Info (12128): Elaborating entity "flipFlop" for hierarchy "CPU:CPU|flipFlop:FLAG_EQ" File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/CPU.vhd Line: 68
+Info (12128): Elaborating entity "jumpLogic" for hierarchy "CPU:CPU|jumpLogic:JMP_LOGIC" File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/CPU.vhd Line: 74
+Info (12128): Elaborating entity "somaConstante" for hierarchy "CPU:CPU|somaConstante:INCREMENTA_PC" File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/CPU.vhd Line: 81
+Info (12128): Elaborating entity "ULASomaSub" for hierarchy "CPU:CPU|ULASomaSub:ULA" File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/CPU.vhd Line: 86
+Info (12128): Elaborating entity "decoderInstru" for hierarchy "CPU:CPU|decoderInstru:DECODER" File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/CPU.vhd Line: 104
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/Contador.vhd Line: 100
+Info (12128): Elaborating entity "memoria" for hierarchy "memoria:ROM" File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/Contador.vhd Line: 111
+Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:DECODER_BLOCO" File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/Contador.vhd Line: 117
+Info (12128): Elaborating entity "HexReg" for hierarchy "HexReg:HEXREG0" File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/Contador.vhd Line: 156
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "HexReg:HEXREG0|registradorGenerico:REG" File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/hexReg.vhd Line: 22
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "HexReg:HEXREG0|conversorHex7Seg:HEX_SEG" File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/hexReg.vhd Line: 31
+Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:DETECTOR_KEY0" File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/Contador.vhd Line: 204
+Info (12128): Elaborating entity "buffer_3_state" for hierarchy "buffer_3_state:TRI_STATE_KEY0" File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/Contador.vhd Line: 220
+Info (12128): Elaborating entity "buffer_3_state_8portas" for hierarchy "buffer_3_state_8portas:TRI_STATE_SW0_TO_7" File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/Contador.vhd Line: 287
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "memoriaRAM:RAM|ram" is uninferred due to asynchronous read logic File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/memoriaRAM.vhd Line: 27
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13048): Converted tri-state node "SIG_KEY_SW_OUT[7]" into a selector File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/muxGenerico2x1.vhd Line: 12
+    Warning (13048): Converted tri-state node "SIG_KEY_SW_OUT[6]" into a selector File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/muxGenerico2x1.vhd Line: 12
+    Warning (13048): Converted tri-state node "SIG_KEY_SW_OUT[5]" into a selector File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/muxGenerico2x1.vhd Line: 12
+    Warning (13048): Converted tri-state node "SIG_KEY_SW_OUT[4]" into a selector File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/muxGenerico2x1.vhd Line: 12
+    Warning (13048): Converted tri-state node "SIG_KEY_SW_OUT[3]" into a selector File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/muxGenerico2x1.vhd Line: 12
+    Warning (13048): Converted tri-state node "SIG_KEY_SW_OUT[2]" into a selector File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/muxGenerico2x1.vhd Line: 12
+    Warning (13048): Converted tri-state node "SIG_KEY_SW_OUT[1]" into a selector File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/muxGenerico2x1.vhd Line: 12
+    Warning (13048): Converted tri-state node "SIG_KEY_SW_OUT[0]" into a selector File: C:/intelFPGA_lite/20.1/projetos/entrega-contador/muxGenerico2x1.vhd Line: 12
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1240 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 16 input pins
+    Info (21059): Implemented 61 output pins
+    Info (21061): Implemented 1163 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 4843 megabytes
+    Info: Processing ended: Fri Oct 21 17:57:46 2022
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:24
+
+
