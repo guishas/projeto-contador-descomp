@@ -106,7 +106,7 @@ RAM : entity work.memoriaRAM generic map(dataWidth => 8, addrWidth => 6)
 				dado_out => SIG_RAM_TO_CPU_DATA
 			);
 			
-ROM : entity work.memoria generic map(dataWidth => 13, addrWidth => 9)
+ROM : entity work.memoria generic map(dataWidth => 13, addrWidth => 10)
 			port map(
 				Endereco => SIG_CPU_TO_ROM,
 				Dado => SIG_ROM_TO_INSTRUCTION
