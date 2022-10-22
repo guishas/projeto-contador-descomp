@@ -1,0 +1,32 @@
+Quartus Prime Archive log --	C:/intelFPGA_lite/20.1/projetos/entrega-contador/Contador.qarlog
+
+Archive:	C:/intelFPGA_lite/20.1/projetos/entrega-contador/Contador.qar
+Date:		Sat Oct 22 16:56:03 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/intelFPGA_lite/20.1/projetos/entrega-contador/CPU.vhd
+C:/intelFPGA_lite/20.1/projetos/entrega-contador/Contador.qpf
+C:/intelFPGA_lite/20.1/projetos/entrega-contador/Contador.qsf
+C:/intelFPGA_lite/20.1/projetos/entrega-contador/Contador.vhd
+C:/intelFPGA_lite/20.1/projetos/entrega-contador/ULASomaSub.vhd
+C:/intelFPGA_lite/20.1/projetos/entrega-contador/buffer_3_state.vhd
+C:/intelFPGA_lite/20.1/projetos/entrega-contador/buffer_3_state_8portas.vhd
+C:/intelFPGA_lite/20.1/projetos/entrega-contador/conversorHex7Seg.vhd
+C:/intelFPGA_lite/20.1/projetos/entrega-contador/decoder3x8.vhd
+C:/intelFPGA_lite/20.1/projetos/entrega-contador/decoderInstru.vhd
+C:/intelFPGA_lite/20.1/projetos/entrega-contador/edgeDetector.vhd
+C:/intelFPGA_lite/20.1/projetos/entrega-contador/flipFlop.vhd
+C:/intelFPGA_lite/20.1/projetos/entrega-contador/hexReg.vhd
+C:/intelFPGA_lite/20.1/projetos/entrega-contador/jumpLogic.vhd
+C:/intelFPGA_lite/20.1/projetos/entrega-contador/memoria.vhd
+C:/intelFPGA_lite/20.1/projetos/entrega-contador/memoriaRAM.vhd
+C:/intelFPGA_lite/20.1/projetos/entrega-contador/muxGenerico2x1.vhd
+C:/intelFPGA_lite/20.1/projetos/entrega-contador/muxGenerico4x1.vhd
+C:/intelFPGA_lite/20.1/projetos/entrega-contador/registradorGenerico.vhd
+C:/intelFPGA_lite/20.1/projetos/entrega-contador/somaConstante.vhd
+c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 21 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
