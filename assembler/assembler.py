@@ -71,7 +71,7 @@ with open(saida, "w+") as f:
         tmp = int(labels[label]["pos"])
         t = 'tmp(' + str(cont) + ') := ' + converteMnemonico(line) + ' & \"' + bin(tmp)[2:].zfill(9) + '\"; -- ' + line.replace("\n", "") + '\n'
         cont+=1
-      elif line.replace("\n", "") == "RET":
+      elif line.replace("\n", "").replace(" ", "") == "RET":
         t = 'tmp(' + str(cont) + ') := ' + line.replace("\n", "") + ' & \"' + bin(0)[2:].zfill(9) + '\"; -- ' + line.replace("\n", "") + '\n'
         cont+=1
       elif line.replace("\n", "") == "NOP":
